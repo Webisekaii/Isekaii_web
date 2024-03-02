@@ -8,11 +8,20 @@
     }
  }
 
+    // nav hide
+
+    let navbar = document.querySelectorAll(".nav-link");
+    let navCollapse = document.querySelector(".navbar-collapse.collapse");
+    navbar.forEach(function(a){
+        a.addEventListener("click", function(){
+            navCollapse.classList.remove( "show" );
+        })
+    })
 
 //  owl carousel
 $(document).ready(function() {
     $(".client-slider-section").owlCarousel ({
-        item: 3,
+        items: 4,
         loop: true,
         nav:false,
         autoplay:true,
@@ -21,13 +30,13 @@ $(document).ready(function() {
         responsiveclass:true,
         responsive:{
             0:{
-                item:2
+                items:2
             },
             600:{
-                item:3
+                items:3
             },
             1000:{
-                item:6
+                items:4
             }
         }
     });
